@@ -15,12 +15,14 @@ export default function TicketList({tickets, onSelect, selectedId, statusFilter,
           </select>
         </div>
       </div>
-      <div className="list-body" role="list">
-        {tickets.map(t => (
-          <TicketItem key={t.id} ticket={t} onClick={()=>onSelect(t.id)} active={t.id===selectedId} />
-        ))}
-        {tickets.length === 0 && <div className="empty-list">No tickets found</div>}
-      </div>
+        <div className="list-scroll" role="list">
+    <div className="list-body">
+      {tickets.map(t => (
+        <TicketItem key={t.id} ticket={t} onClick={()=>onSelect(t.id)} active={t.id===selectedId} />
+      ))}
+      {tickets.length === 0 && <div className="empty-list">No tickets found</div>}
+    </div>
+  </div>
     </aside>
   )
 }

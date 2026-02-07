@@ -26,6 +26,7 @@ export default function App() {
   return (
     <div className="app">
       <Sidebar />
+      <div className="main-container">
       <main className="main">
         <Header query={query} setQuery={setQuery} />
         <section className="top-cards">
@@ -45,6 +46,7 @@ export default function App() {
           <TicketDetail ticket={selectedTicket} onUpdate={updateTicket} />
         </section>
       </main>
+    </div>
     </div>
   )
 }
